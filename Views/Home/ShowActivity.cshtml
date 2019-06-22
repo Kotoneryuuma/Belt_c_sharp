@@ -1,0 +1,25 @@
+@model belt.Models.Display
+
+
+<a href="/dashboard">Dashboard</a>
+<a href="/logout">Log Out</a>
+
+<h1>@Model.ActivityName</h1>
+
+<h2>Event Coordinator: @Model.UserName</h2>
+<h2>Description: @Model.Description</h2>
+
+<p>Participants:</p>
+@{
+  if (Model.Guests == null)
+  {
+    <p>No Guests Yet</p>
+  }
+  else
+  {
+    foreach (User g in Model.Guests)
+    {
+      <li>@g.UserName</li>
+    }
+  }
+}

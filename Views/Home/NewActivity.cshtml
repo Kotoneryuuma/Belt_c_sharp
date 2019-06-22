@@ -1,0 +1,51 @@
+@model belt.Models.ActivityForm
+
+<h2>Create an Activity</h2>
+<!-- <a href="/login">Already Registered?</a> -->
+
+<form asp-action="DisplayToDB" asp-controller="Home" method="post">
+    <p>
+    <span asp-validation-for="Title"></span>
+    </p>
+   
+    <label asp-for="Title"></label>
+	<input asp-for="Title">
+    <p></p>
+
+    <p>
+    <span asp-validation-for="Time"></span>
+    </p>
+    
+    <label asp-for="Time"></label>
+	<input asp-for="Time">
+    <p></p>
+
+    <p>
+    <span asp-validation-for="Date"></span>
+    </p>
+   
+    <label asp-for="Date"></label>
+	<input asp-for="Date">
+    <p></p>
+
+    <p>
+    <span asp-validation-for="Duration"></span>
+    </p>
+  
+    <label asp-for="Duration"></label>
+	<input asp-for="Duration">
+    <p></p>
+
+     <p>
+    <span asp-validation-for="Description"></span>
+    </p>
+  
+    <label asp-for="Description"></label>
+	<input asp-for="Description">
+    <p></p>
+
+
+
+    <button type="submit">Create</button>
+
+</form>

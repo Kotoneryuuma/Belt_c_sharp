@@ -1,0 +1,43 @@
+@using belt.Models
+@model List<Display>
+
+<h3>Welcome to Dojo Activity Center</h3>
+
+<table>
+	<thead>
+		<th>Activity</th>
+		<th>Date & Time</th>
+		<th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>No of Participants</th>
+        <th>Actions</th>
+	</thead>
+	@foreach (Display i in Model)
+	{
+		<tr>
+			<td><a href="/activity/@i.DisplayID">@i.ActivityName</td>
+			<td>@i.Date.ToString("d") & @i.Time </td>
+            <td>@i.Duration </td>
+            <td>@i.UserName </td>
+			<td>@i.Guests.Count()</td>
+            <td>
+                @if (i.IsHosting)
+                {
+                <a href="/delete/@i.DisplayID">Delete</a>
+                }
+                else if (!i.IsAttending)
+                {
+                <a href="/join/@i.DisplayID">Join</a>
+                }
+                else
+                {
+                <a href="/leave/@i.DisplayID">Leave</a>
+                }
+            <td>
+
+		</tr>
+	}
+</table>
+
+<p><a href="/newactivity">New Activity</a></p>
+

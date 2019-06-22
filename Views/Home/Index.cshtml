@@ -1,0 +1,9 @@
+﻿<!-- ２つのモデル　Login と Register を １つの（同じ）Html に表示するために -->
+<!-- Container という２つのモデル　が乗っているモデルを設けた -->
+@model belt.Models.Container
+
+<!-- Html の名前　（Partial で送る -->
+<partial name="RegisterFormPartial" />
+
+<!-- Html の名前　（Partial で送る -->
+<partial name="LoginFormPartial" />

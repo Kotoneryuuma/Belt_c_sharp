@@ -1,0 +1,42 @@
+@model RegisterForm
+
+<h2>Register</h2>
+<!-- <a href="/login">Already Registered?</a> -->
+
+<form asp-action="UserToDB" asp-controller="Home" method="post">
+    <p>
+    <span asp-validation-for="UserName"></span>
+    </p>
+   
+    <label asp-for="UserName"></label>
+	<input asp-for="UserName">
+    <p></p>
+
+
+    <p>
+    <span asp-validation-for="Email"></span>
+    </p>
+   
+    <label asp-for="Email"></label>
+	<input asp-for="Email">
+    <p></p>
+
+    <p>
+    <span asp-validation-for="Password"></span>
+    </p>
+  
+    <label asp-for="Password"></label>
+	<input asp-for="Password">
+    <p></p>
+
+    <p>
+    <span asp-validation-for="ConfirmPassword"></span>
+    </p>
+    <label asp-for="ConfirmPassword"></label>
+	<input asp-for="ConfirmPassword">
+    <p></p>
+
+
+    <button type="submit">Submit</button>
+
+</form>
